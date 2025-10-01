@@ -69,6 +69,11 @@
     },
     {
       "type": "file",
+      "source": "httpd_slack_alert.sh",
+      "destination": "/tmp/httpd_slack_alert.sh"
+    },
+    {
+      "type": "file",
       "source": "sshd_config",
       "destination": "/tmp/sshd_config"
     },  
@@ -135,6 +140,7 @@
         "mv /tmp/cert_expiry_monitor.py /home/ec2-user/ssl_expire_script/",
         "mv /tmp/startcloudwatchlogs.sh /usr/bin/startcloudwatchlogs.sh",
         "mv /tmp/gets3content.sh /home/ec2-user/gets3content/gets3content.sh",
+        "mv /tmp/httpd_slack_alert.sh /home/ec2-user/httpd_slack_alert.sh",
         "mv /tmp/sshd_config /etc/ssh/sshd_config",          
         "cp /tmp/cronfile /var/spool/cron/ec2-user",
         "cp -f /tmp/install/httpd.conf /etc/httpd/conf/httpd.conf",
@@ -146,6 +152,7 @@
         "chmod 644 /etc/letsencrypt/config.ini",
         "chmod +x /tmp/awslogs-agent-setup.py",
         "chmod +x /home/ec2-user/gets3content/gets3content.sh",
+        "chmod +x /home/ec2-user/httpd_slack_alert.sh",
         "chmod 0770 /home/ec2-user/ssl_expire_script/",
         "chmod 0600 /etc/ssh/sshd_config",  
         "chown -R ec2-user:ec2-user /home/ec2-user/",
