@@ -5,3 +5,5 @@
 #Ansible: Pull httpd config files S3 - every 5 mins
 */5 * * * * source /home/ec2-user/gets3content/env_vars && /home/ec2-user/gets3content/gets3content.sh
 @reboot /usr/bin/startcloudwatchlogs.sh
+#Cron job to check httpd process status and send slack alert
+*/5 * * * * root /home/ec2-user/httpd_slack_alert.sh
