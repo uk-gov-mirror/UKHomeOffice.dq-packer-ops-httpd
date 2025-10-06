@@ -10,8 +10,7 @@ SLACK_WEBHOOK=$(aws ssm get-parameter \
 
 # Check if the httpd process is running
 if ! pgrep -x "httpd" > /dev/null; then
-  HOSTNAME=$(hostname)
-  MESSAGE="[$HOSTNAME] ALERT: httpd process is not running!"
+  MESSAGE=" ALERT: httpd process is not running!"
 
   # Send Slack alert
   curl -X POST -H 'Content-type: application/json' --data "{
